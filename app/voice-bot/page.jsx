@@ -2,6 +2,7 @@
 import axios from "axios";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
+import { toast } from "sonner";
 
 function VoiceBot() {
     const [responseText, setResponseText] = useState("");
@@ -9,6 +10,9 @@ function VoiceBot() {
     const [isRecording, setIsRecording] = useState(false);
     const recognition = useRef(null);
     const conversationEndRef = useRef(null); // Ref to the last message
+    useEffect(()=>{
+        toast("Use Chrome Browser for Better Experience!!");
+    },[])
 
     useEffect(() => {
         const SpeechRecognition =
